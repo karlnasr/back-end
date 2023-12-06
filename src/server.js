@@ -10,7 +10,7 @@ app.use('/images', express.static(path.join(__dirname, '../assets')));
 
 app.get('/api/products', async (req, res) => {
   const client = await MongoClient.connect(
-    'mongodb://localhost:27017',
+    'mongodb+srv://back-end:backend123@cluster0.ghgorj0.mongodb.net/?retryWrites=true&w=majority',
     { useNewUrlParser: true, useUnifiedTopology: true },
   );
   const db = client.db('vue-db');
@@ -22,7 +22,7 @@ app.get('/api/products', async (req, res) => {
 app.get('/api/users/:userId/cart', async (req, res) => {
   const { userId } = req.params;
   const client = await MongoClient.connect(
-    'mongodb://localhost:27017',
+    'mongodb+srv://back-end:backend123@cluster0.ghgorj0.mongodb.net/?retryWrites=true&w=majority',
     { useNewUrlParser: true, useUnifiedTopology: true },
   );
   const db = client.db('vue-db');  
@@ -39,7 +39,7 @@ app.get('/api/users/:userId/cart', async (req, res) => {
 app.get('/api/products/:productId', async (req, res) => {
     const { productId } = req.params;
     const client = await MongoClient.connect(
-      'mongodb://localhost:27017',
+      'mongodb+srv://back-end:backend123@cluster0.ghgorj0.mongodb.net/?retryWrites=true&w=majority',
       { useNewUrlParser: true, useUnifiedTopology: true },
     );
     const db = client.db('vue-db');
@@ -56,7 +56,7 @@ app.post('/api/users/:userId/cart', async (req, res) => {
   const { userId } = req.params;
   const { productId } = req.body;
   const client = await MongoClient.connect(
-    'mongodb://localhost:27017',
+    'mongodb+srv://back-end:backend123@cluster0.ghgorj0.mongodb.net/?retryWrites=true&w=majority',
     { useNewUrlParser: true, useUnifiedTopology: true },
   );
   const db = client.db('vue-db');
@@ -75,7 +75,7 @@ app.post('/api/users/:userId/cart', async (req, res) => {
 app.delete('/api/users/:userId/cart/:productId', async (req, res) => {
   const { userId, productId } = req.params;
   const client = await MongoClient.connect(
-    'mongodb://localhost:27017',
+    'mongodb+srv://back-end:backend123@cluster0.ghgorj0.mongodb.net/?retryWrites=true&w=majority',
     { useNewUrlParser: true, useUnifiedTopology: true },
   );
   const db = client.db('vue-db');
